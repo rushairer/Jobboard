@@ -26,8 +26,9 @@ filetype plugin on
 	Bundle 'vim-scripts/applescript.vim'
 	Bundle 'vim-scripts/localvimrc'
 	Bundle 'xsbeats/vim-blade'
-    Bundle 'jlanzarotta/bufexplorer'
-    Bundle 'stephpy/vim-php-cs-fixer'
+        Bundle 'jlanzarotta/bufexplorer'
+        Bundle 'stephpy/vim-php-cs-fixer'
+        Bundle 'othree/html5.vim'
 	"Bundle 'altercation/vim-colors-solarized'
 	"Bundle 'flazz/vim-colorschemes'
 	"Bundle 'nathanaelkane/vim-indent-guides'
@@ -77,7 +78,8 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
 " Saved macros
-let @t = ':Tabularize /\(=>\|=\)' "For lining up => and =
+let @t = ':Tabularize /\(=>\|=\)
+' "For lining up => and =
 
 " Key mappings
 	let mapleader = ","
