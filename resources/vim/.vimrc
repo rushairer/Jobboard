@@ -26,9 +26,12 @@ filetype plugin on
 	Bundle 'vim-scripts/applescript.vim'
 	Bundle 'vim-scripts/localvimrc'
 	Bundle 'xsbeats/vim-blade'
-        Bundle 'jlanzarotta/bufexplorer'
-        Bundle 'stephpy/vim-php-cs-fixer'
-        Bundle 'othree/html5.vim'
+    Bundle 'jlanzarotta/bufexplorer'
+    Bundle 'stephpy/vim-php-cs-fixer'
+    Bundle 'fatih/vim-go'
+    Bundle 'Valloric/YouCompleteMe'
+    Bundle 'shawncplus/phpcomplete.vim'
+    Bundle 'othree/html5.vim'
 	"Bundle 'altercation/vim-colors-solarized'
 	"Bundle 'flazz/vim-colorschemes'
 	"Bundle 'nathanaelkane/vim-indent-guides'
@@ -78,8 +81,8 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
 " Saved macros
-let @t = ':Tabularize /\(=>\|=\)
-' "For lining up => and =
+"For lining up => and =
+let @t = ':Tabularize /\(=>\|=\)' 
 
 " Key mappings
 	let mapleader = ","
@@ -187,3 +190,13 @@ let @t = ':Tabularize /\(=>\|=\)
 	let g:loaded_syntastic_php_phpcs_checker = 1
 
     :map <Space> :BufExplorer<CR>
+
+    "YouCompleteMe
+    nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+    nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+    nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+    let g:ycm_error_symbol = '>>'
+    let g:ycm_warning_symbol = '>*'
+    nmap <F4> :YcmDiags<CR>
+    autocmd FileType php setlocal omnifunc=phpcomplete#Complete
+
