@@ -1,4 +1,5 @@
-" Vundle
+" Vunst
+" dle
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
@@ -6,37 +7,36 @@ call vundle#rc()
 filetype plugin indent on
 filetype plugin on
 
-	" My Bundles
-	Bundle 'airblade/vim-gitgutter'
-	Bundle 'digitaltoad/vim-jade'
-	Bundle 'editorconfig/editorconfig-vim'
-	Bundle 'godlygeek/tabular'
-	Bundle 'groenewege/vim-less'
-	Bundle 'jnwhiteh/vim-golang'
-	Bundle 'kchmck/vim-coffee-script'
-	Bundle 'kien/ctrlp.vim'
-	Bundle 'Lokaltog/powerline'
-	Bundle 'Lokaltog/vim-easymotion'
-	Bundle 'mattn/emmet-vim'
-	Bundle 'nvie/vim-rst-tables'
-	Bundle 'scrooloose/nerdtree'
-	Bundle 'scrooloose/syntastic'
-	Bundle 'tomtom/tcomment_vim'
-	Bundle 'tpope/vim-fugitive'
-	Bundle 'vim-scripts/applescript.vim'
-	Bundle 'vim-scripts/localvimrc'
-	Bundle 'xsbeats/vim-blade'
-    Bundle 'jlanzarotta/bufexplorer'
-    Bundle 'stephpy/vim-php-cs-fixer'
-    Bundle 'fatih/vim-go'
-    Bundle 'Valloric/YouCompleteMe'
-    Bundle 'shawncplus/phpcomplete.vim'
-    Bundle 'othree/html5.vim'
-	"Bundle 'altercation/vim-colors-solarized'
-	"Bundle 'flazz/vim-colorschemes'
-	"Bundle 'nathanaelkane/vim-indent-guides'
-
-	Bundle 'taglist.vim'
+" My Bundles
+Bundle 'airblade/vim-gitgutter'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'editorconfig/editorconfig-vim'
+Bundle 'godlygeek/tabular'
+Bundle 'groenewege/vim-less'
+Bundle 'jnwhiteh/vim-golang'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Lokaltog/powerline'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'mattn/emmet-vim'
+Bundle 'nvie/vim-rst-tables'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'vim-scripts/applescript.vim'
+Bundle 'vim-scripts/localvimrc'
+Bundle 'xsbeats/vim-blade'
+Bundle 'jlanzarotta/bufexplorer'
+Bundle 'stephpy/vim-php-cs-fixer'
+Bundle 'fatih/vim-go'
+"        Bundle 'Valloric/YouCompleteMe'
+Bundle 'shawncplus/phpcomplete.vim'
+Bundle 'othree/html5.vim'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'flazz/vim-colorschemes'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'taglist.vim'
 
 " General Settings
 syntax on
@@ -46,7 +46,7 @@ set expandtab
 set autoindent
 set title
 set visualbell
-set noignorecase
+"set noignorecase
 set hlsearch
 set incsearch
 set autoread
@@ -54,7 +54,7 @@ set nobackup
 set nowb
 set noswapfile
 set number
-set relativenumber
+"set relativenumber
 set modelines=2
 set backspace=indent,eol,start
 
@@ -85,118 +85,118 @@ autocmd BufWinLeave * call clearmatches()
 let @t = ':Tabularize /\(=>\|=\)' 
 
 " Key mappings
-	let mapleader = ","
+let mapleader = ","
 
-	map <C-j> <C-W>j
-	map <C-k> <C-W>k
-	map <C-h> <C-W>h
-	map <C-l> <C-W>l
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 
-	" Easily resize windows with just + or - keys
-	map + <C-W>+
-	map - <C-W>-
+" Easily resize windows with just + or - keys
+map + <C-W>+
+map - <C-W>-
 
-	"nore ; :
-	imap jj <Esc>
-	imap kk <Esc>
+"nore ; :
+imap jj <Esc>
+imap kk <Esc>
 
-	map  <F1> <ESC>:wall<CR>
-	imap <F1> <ESC>:wall<CR>
+map  <F1> <ESC>:wall<CR>
+imap <F1> <ESC>:wall<CR>
 
-	set pastetoggle=<F2>
+set pastetoggle=<F2>
 
-	nnoremap <F3> :set hlsearch!<CR>
+nnoremap <F3> :set hlsearch!<CR>
 
-	map  <F4> <ESC>:call ToggleNumbers()<CR>
-	imap <F4> <ESC>:call ToggleNumbers()<CR>
-	function! ToggleNumbers()
-		if &relativenumber == 1
-			set norelativenumber
-			:GitGutterEnable
-		elseif &number == 1
-			set nonumber
-			:GitGutterDisable
-		elseif &number == 0 && $relativenumber == 0
-			set relativenumber
-			set number
-			:GitGutterEnable
-		endif
-	endfunction
+map  <F4> <ESC>:call ToggleNumbers()<CR>
+imap <F4> <ESC>:call ToggleNumbers()<CR>
+function! ToggleNumbers()
+    if &relativenumber == 1
+        set norelativenumber
+        :GitGutterEnable
+    elseif &number == 1
+        set nonumber
+        :GitGutterDisable
+    elseif &number == 0 && $relativenumber == 0
+        set relativenumber
+        set number
+        :GitGutterEnable
+    endif
+endfunction
 
-	nnoremap <F6> :call ToggleMouse()<CR>
-	function! ToggleMouse()
-		if &mouse == 'a'
-			set mouse=
-			echo "Mouse usage disabled"
-		else
-			set mouse=a
-			echo "Mouse usage enabled"
-		endif
-	endfunction
+nnoremap <F6> :call ToggleMouse()<CR>
+function! ToggleMouse()
+    if &mouse == 'a'
+        set mouse=
+        echo "Mouse usage disabled"
+    else
+        set mouse=a
+        echo "Mouse usage enabled"
+    endif
+endfunction
 
 " Colors
-	" Needed for Solarized colors to work correctly on local Mac
-	set background=light
-	" colorscheme solarized
-	let g:solarized_termcolors=256
+" Needed for Solarized colors to work correctly on local Mac
+set background=light
+" colorscheme solarized
+let g:solarized_termcolors=256
 
-	highlight Search ctermfg=White ctermbg=Red
-	highlight LineNr ctermfg=10
-	" highlight CursorLineNr ctermfg=1
+highlight Search ctermfg=White ctermbg=Red
+highlight LineNr ctermfg=10
+" highlight CursorLineNr ctermfg=1
 
 " Plugins
-	" Nerd Tree
-	nmap <C-n> :NERDTreeToggle<CR>
-	let NERDTreeDirArrows=0
-	let NERDTreeShowHidden=1
-	" Quit nerdtree if it's the last open
-	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" Nerd Tree
+nmap <C-n> :NERDTreeToggle<CR>
+let NERDTreeDirArrows=0
+let NERDTreeShowHidden=1
+" Quit nerdtree if it's the last open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-	" Taglist
-	if !executable('exuberant-ctags')
-		let loaded_taglist=1 " disable taglist
-	endif
-	map <F5> <ESC>:TlistToggle<CR>
-	imap <F5> <ESC>:TlistToggle<CR>
-	let tlist_php_settings = 'php;c:class;f:function'
-	let Tlist_Use_Right_Window = 1
+" Taglist
+if !executable('exuberant-ctags')
+    let loaded_taglist=1 " disable taglist
+endif
+map <F5> <ESC>:TlistToggle<CR>
+imap <F5> <ESC>:TlistToggle<CR>
+let tlist_php_settings = 'php;c:class;f:function'
+let Tlist_Use_Right_Window = 1
 
-	" .lvimrc
-	let g:localvimrc_sandbox=0
-	let g:localvimrc_ask=0
+" .lvimrc
+let g:localvimrc_sandbox=0
+let g:localvimrc_ask=0
 
-	" Ctrl P
-	set runtimepath^=~/trevdev/vim/bundle/ctrlp.vim
-	let g:ctrlp_max_height = 20
-	let g:ctrlp_use_caching = 1
-	let g:ctrlp_clear_cache_on_exit = 0
-	let g:ctrlp_show_hidden = 1
-	"nnoremap <c-p> :CtrlP /var/www<cr> "Can be used to override default base dir
+" Ctrl P
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_max_height = 20
+let g:ctrlp_use_caching = 1
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_show_hidden = 1
+"nnoremap <c-p> :CtrlP /var/www<cr> "Can be used to override default base dir
 
-	" Powerline
-	set laststatus=2
-	set encoding=utf-8
-	set rtp+=~/trevdev/vim/bundle/powerline/powerline/bindings/vim
-	set t_Co=256
-	let g:Powerline_symbols = "fancy"
+" Powerline
+set laststatus=2
+set encoding=utf-8
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+set t_Co=256
+let g:Powerline_symbols = "fancy"
 
-	" Git Gutter
-	highlight clear SignColumn
-	let g:gitgutter_max_signs = 99999
+" Git Gutter
+highlight clear SignColumn
+let g:gitgutter_max_signs = 99999
 
-	" Syntastic
-	" disable for angular
-	let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
-	let g:loaded_syntastic_php_phpcs_checker = 1
+" Syntastic
+" disable for angular
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+let g:loaded_syntastic_php_phpcs_checker = 1
 
-    :map <Space> :BufExplorer<CR>
+:map <Space> :BufExplorer<CR>
 
-    "YouCompleteMe
-    nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
-    nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
-    nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
-    let g:ycm_error_symbol = '>>'
-    let g:ycm_warning_symbol = '>*'
-    nmap <F4> :YcmDiags<CR>
-    autocmd FileType php setlocal omnifunc=phpcomplete#Complete
-
+"YouCompleteMe
+"nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+"nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+"nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"let g:ycm_error_symbol = '>>'
+"let g:ycm_warning_symbol = '>*'
+"nmap <F4> :YcmDiags<CR>
+"autocmd FileType php setlocal omnifunc=phpcomplete#Complete
+"
