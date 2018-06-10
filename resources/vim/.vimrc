@@ -37,6 +37,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'taglist.vim'
+Bundle 'posva/vim-vue'
 
 " General Settings
 syntax on
@@ -199,4 +200,6 @@ let g:loaded_syntastic_php_phpcs_checker = 1
 "let g:ycm_warning_symbol = '>*'
 "nmap <F4> :YcmDiags<CR>
 "autocmd FileType php setlocal omnifunc=phpcomplete#Complete
-"
+
+autocmd FileType vue syntax sync fromstart
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
