@@ -30,7 +30,7 @@ Bundle 'xsbeats/vim-blade'
 Bundle 'jlanzarotta/bufexplorer'
 Bundle 'stephpy/vim-php-cs-fixer'
 Bundle 'fatih/vim-go'
-"        Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'othree/html5.vim'
 Bundle 'altercation/vim-colors-solarized'
@@ -38,6 +38,8 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'taglist.vim'
 Bundle 'posva/vim-vue'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'DoxygenToolkit.vim'
 
 " General Settings
 syntax on
@@ -203,3 +205,10 @@ let g:loaded_syntastic_php_phpcs_checker = 1
 
 autocmd FileType vue syntax sync fromstart
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+
+let g:DoxygenToolkit_commentType = "php"
+let g:DoxygenToolkit_briefTag_funcName="yes"
+let g:DoxygenToolkit_briefTag_pre=""
+let g:DoxygenToolkit_paramTag_pre="@params [type]"
+let g:DoxygenToolkit_returnTag="@return"
+let g:Doxygen_enhanced_color=1
